@@ -1,0 +1,24 @@
+<header>
+<nav>
+<md-toolbar color="warn" class="navbar">
+	<a [routerLink]="['/']">
+		<button md-button >NEWS</button>
+	</a>
+	<a [routerLink]="['/sources']">
+		<button md-button >Available Sources</button>	
+	</a>
+	<a [routerLink]="['/source/1']">
+		<button md-button >Source A</button>
+	</a>	
+	<a href="#">
+		<button md-button>About</button>
+	</a>	
+</md-toolbar>
+</nav>
+</header>
+
+<div class="container">
+
+      <router-outlet></router-outlet>
+
+</div>
