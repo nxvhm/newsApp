@@ -8,14 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
-var animations_1 = require("@angular/platform-browser/animations");
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-var material_1 = require("@angular/material");
 var app_component_1 = require("./components/app.component");
 var indexNews_component_1 = require("./components/indexNews.component");
 var sourceNews_component_1 = require("./components/sourceNews.component");
 var sourceList_component_1 = require("./components/sourceList.component");
+var sidebar_component_1 = require("./components/sidebar.component");
+var topbar_component_1 = require("./components/topbar/topbar.component");
 var app_routes_1 = require("./app.routes");
 var news_service_1 = require("./services/news.service");
 var NewsAppModule = (function () {
@@ -28,15 +28,14 @@ NewsAppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes, { useHash: true }),
             http_1.HttpModule,
-            animations_1.BrowserAnimationsModule,
-            material_1.MaterialModule,
-            material_1.MdNativeDateModule,
         ],
         declarations: [
+            topbar_component_1.TopNavigationComponent,
+            sidebar_component_1.SourcesSidebarComponent,
             app_component_1.NewsAppComponent,
             indexNews_component_1.IndexNewsComponent,
             sourceNews_component_1.SourceNewsComponent,
-            sourceList_component_1.SourceListComponent
+            sourceList_component_1.SourceListComponent,
         ],
         providers: [news_service_1.NewsService],
         bootstrap: [app_component_1.NewsAppComponent]

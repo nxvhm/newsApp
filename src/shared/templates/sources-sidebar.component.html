@@ -1,0 +1,15 @@
+<div id="sidebar">
+	
+	<div class="menu-search">
+    	<input name="search" placeholder="Search..." type="text">
+  	</div>
+
+	<div id="menu-container">
+		<ul>
+			<li *ngFor="let source of sources.sources">
+				<a [routerLink]="['/source', source.id]">{{source.name}}</a>
+			</li>
+		</ul>
+	</div>
+
+</div>

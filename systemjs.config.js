@@ -13,6 +13,8 @@
     '@angular/animations/browser': 'node_modules/@angular/animations/bundles/animations-browser.umd.js',
     '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',         
     '@angular/material':    'node_modules/@angular/material/bundles/material.umd.js',   
+    'moment': 'node_modules/moment/moment.js',
+    'ngx-bootstrap/ngx-bootstrap': 'node_modules/ngx-bootstrap/bundles/ngx-bootstrap.umd.js',
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
