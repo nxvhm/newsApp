@@ -26,7 +26,7 @@ import { NewsService } from './services/news.service';
 		NewsAppComponent, 
 		IndexNewsComponent, 
 		SourceNewsComponent, 
-		SourceListComponent
+			SourceListComponent
 	],
 	providers: [ NewsService ],
 	bootstrap: [NewsAppComponent]

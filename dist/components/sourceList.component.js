@@ -23,8 +23,7 @@ var SourceListComponent = (function () {
      * api
      */
     SourceListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.newsProvider.fetchAvailableSources().subscribe(function (data) { return _this.sources = data; });
+        this.sources = this.newsProvider.getAvailableSources();
     };
     return SourceListComponent;
 }());

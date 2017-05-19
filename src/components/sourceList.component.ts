@@ -24,8 +24,6 @@ export class SourceListComponent implements OnInit{
 	 */
 	ngOnInit() {
 
-	    this.newsProvider.fetchAvailableSources().subscribe(
-			(data) => this.sources = data
-		);
+		this.sources = this.newsProvider.getAvailableSources();
 	}
 }
