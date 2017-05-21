@@ -11,6 +11,9 @@ body {
 	color: #fff;
 }
 
+.pl0 { padding-left: 0px!important;}
+.pr0 { padding-left: 0px!important;}
+.p5  { padding: 5px;}
 
 #sidebar {
 	width: 270px;
@@ -56,4 +59,15 @@ body {
 	margin-top: 60px;
 	/* padding: 15px; */
 	box-sizing: border-box;
+}
+
+article.article-preview {
+	margin-bottom: 20px;
+	padding-left: 0px;
+}
+article.article-preview h1, 
+article.article-preview h2, 
+article.article-preview h3 {
+	margin-top: 0px;
+	padding-top: 0px;
 }

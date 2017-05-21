@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class="hidden-xs">
 	
 	<div class="menu-search">
     	<input name="search" placeholder="Search..." type="text">
@@ -6,7 +6,7 @@
 
 	<div id="menu-container">
 		<ul>
-			<li *ngFor="let source of sources.sources">
+			<li *ngFor="let source of sources">
 				<a [routerLink]="['/source', source.id]">{{source.name}}</a>
 			</li>
 		</ul>

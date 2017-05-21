@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NewsService } from '../services/news.service';
+import { NewsService } from '../../services/news.service';
 
 @Component({
   selector: 'top-navigation',
@@ -7,5 +7,9 @@ import { NewsService } from '../services/news.service';
 })
 
 export class TopNavigationComponent {
+	isCollapsed: boolean = true;
 
+	toggleCollapse(): void {
+	  this.isCollapsed = !this.isCollapsed;
+	}
 }

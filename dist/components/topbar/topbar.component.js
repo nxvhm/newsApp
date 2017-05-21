@@ -9,7 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TopNavigationComponent = (function () {
     function TopNavigationComponent() {
+        this.isCollapsed = true;
     }
+    TopNavigationComponent.prototype.toggleCollapse = function () {
+        this.isCollapsed = !this.isCollapsed;
+    };
     return TopNavigationComponent;
 }());
 TopNavigationComponent = __decorate([

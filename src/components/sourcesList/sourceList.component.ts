@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import { NewsService } from '../services/news.service';
+import { NewsService } from '../../services/news.service';
 import { OnInit } from '@angular/core';
 
 @Component({
 	selector: 'sources-list',
-	templateUrl: './src/shared/templates/source-list.component.html',
+	templateUrl: './src/components/sourcesList/sources-list.component.html',
 })
 // Displaying available news sources
 export class SourceListComponent implements OnInit{
@@ -23,7 +23,8 @@ export class SourceListComponent implements OnInit{
 	 * api
 	 */
 	ngOnInit() {
-
-		this.sources = this.newsProvider.getAvailableSources();
+		this.newsProvider.getNewsSources().subscribe(sources => {
+			this.sources = sources;
+		});
 	}
 }

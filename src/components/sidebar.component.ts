@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NewsService } from '../services/news.service';
 import { OnInit } from '@angular/core';
+import { Source } from  '../models/Source';
 
 @Component({
 	selector: 'sources-sidebar',
@@ -9,12 +10,15 @@ import { OnInit } from '@angular/core';
 
 export class SourcesSidebarComponent implements OnInit {
 
-	sources = [];
+	sources: Source[];
 
 	constructor(private provider: NewsService) {}
 
 
 	ngOnInit(){
-		this.sources = this.provider.getAvailableSources();
+		// this.sources = this.provider.getAvailableSources();
+		this.provider.getNewsSources().subscribe(sources => {
+			this.sources = sources;
+		});
 	}
 }

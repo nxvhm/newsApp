@@ -10,26 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var news_service_1 = require("../services/news.service");
-var SourcesSidebarComponent = (function () {
-    function SourcesSidebarComponent(provider) {
-        this.provider = provider;
+var news_service_1 = require("../../services/news.service");
+var SourceListComponent = (function () {
+    function SourceListComponent(newsProvider) {
+        this.newsProvider = newsProvider;
+        this.sources = [];
     }
-    SourcesSidebarComponent.prototype.ngOnInit = function () {
+    /**
+     * [ngOnInit description]
+     * Check if sources list is available in localStorage and not expired
+     * if available  bind it to view, else retrieve the list from
+     * api
+     */
+    SourceListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // this.sources = this.provider.getAvailableSources();
-        this.provider.getNewsSources().subscribe(function (sources) {
+        this.newsProvider.getNewsSources().subscribe(function (sources) {
             _this.sources = sources;
         });
     };
-    return SourcesSidebarComponent;
+    return SourceListComponent;
 }());
-SourcesSidebarComponent = __decorate([
+SourceListComponent = __decorate([
     core_1.Component({
-        selector: 'sources-sidebar',
-        templateUrl: './src/shared/templates/sources-sidebar.component.html',
-    }),
+        selector: 'sources-list',
+        templateUrl: './src/components/sourcesList/sources-list.component.html',
+    })
+    // Displaying available news sources
+    ,
     __metadata("design:paramtypes", [news_service_1.NewsService])
-], SourcesSidebarComponent);
-exports.SourcesSidebarComponent = SourcesSidebarComponent;
-//# sourceMappingURL=sidebar.component.js.map
+], SourceListComponent);
+exports.SourceListComponent = SourceListComponent;
+//# sourceMappingURL=sourceList.component.js.map

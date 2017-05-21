@@ -11,9 +11,9 @@ var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./components/app.component");
-var indexNews_component_1 = require("./components/indexNews.component");
-var sourceNews_component_1 = require("./components/sourceNews.component");
-var sourceList_component_1 = require("./components/sourceList.component");
+var indexNews_component_1 = require("./components/indexNews/indexNews.component");
+var sourceNews_component_1 = require("./components/sourceNews/sourceNews.component");
+var sourceList_component_1 = require("./components/sourcesList/sourceList.component");
 var sidebar_component_1 = require("./components/sidebar.component");
 var topbar_component_1 = require("./components/topbar/topbar.component");
 var app_routes_1 = require("./app.routes");
@@ -26,7 +26,7 @@ var NewsAppModule = (function () {
 NewsAppModule = __decorate([
     core_1.NgModule({
         imports: [
-            platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes, { useHash: true }),
+            platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes),
             http_1.HttpModule,
         ],
         declarations: [

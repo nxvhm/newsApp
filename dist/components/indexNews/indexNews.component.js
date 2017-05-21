@@ -10,26 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var news_service_1 = require("../services/news.service");
-var SourcesSidebarComponent = (function () {
-    function SourcesSidebarComponent(provider) {
-        this.provider = provider;
+var news_service_1 = require("../../services/news.service");
+var IndexNewsComponent = (function () {
+    function IndexNewsComponent(newsProvider) {
+        this.newsProvider = newsProvider;
     }
-    SourcesSidebarComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // this.sources = this.provider.getAvailableSources();
-        this.provider.getNewsSources().subscribe(function (sources) {
-            _this.sources = sources;
-        });
+    IndexNewsComponent.prototype.logIt = function () {
+        this.newsProvider.log();
     };
-    return SourcesSidebarComponent;
+    IndexNewsComponent.prototype.ngOnInit = function () {
+        this.logIt();
+    };
+    return IndexNewsComponent;
 }());
-SourcesSidebarComponent = __decorate([
+IndexNewsComponent = __decorate([
     core_1.Component({
-        selector: 'sources-sidebar',
-        templateUrl: './src/shared/templates/sources-sidebar.component.html',
-    }),
+        selector: 'index-news',
+        templateUrl: './src/components/indexNews/index-news.component.html',
+    })
+    // Display index news
+    ,
     __metadata("design:paramtypes", [news_service_1.NewsService])
-], SourcesSidebarComponent);
-exports.SourcesSidebarComponent = SourcesSidebarComponent;
-//# sourceMappingURL=sidebar.component.js.map
+], IndexNewsComponent);
+exports.IndexNewsComponent = IndexNewsComponent;
+//# sourceMappingURL=indexNews.component.js.map
