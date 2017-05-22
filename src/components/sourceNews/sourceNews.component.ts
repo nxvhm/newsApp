@@ -21,8 +21,8 @@ export class SourceNewsComponent implements OnInit {
 	  ngOnInit() {
 	  	this.route.params.subscribe(params => {
 	  		this.sourceId = params.id;
-	  		this.loadSourceNews(this.sourceId);
 	  		this.setSource(this.sourceId);
+	  		this.loadSourceNews(this.sourceId, this.source);
 	  	});
 	  }
 
@@ -31,8 +31,8 @@ export class SourceNewsComponent implements OnInit {
 	  }
 
 
-	  loadSourceNews(sourceId: string){
-	  	this.newsProvider.fetchArticlesFromServer(sourceId).subscribe(articles => {
+	  loadSourceNews(sourceId: string, source: Source){
+	  	this.newsProvider.fetchArticlesFromServer(sourceId, source).subscribe(articles => {
 	  		this.articles = articles;
 	  	});
 	  }

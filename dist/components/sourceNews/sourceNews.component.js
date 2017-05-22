@@ -21,15 +21,15 @@ var SourceNewsComponent = (function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.sourceId = params.id;
-            _this.loadSourceNews(_this.sourceId);
             _this.setSource(_this.sourceId);
+            _this.loadSourceNews(_this.sourceId, _this.source);
         });
     };
     SourceNewsComponent.prototype.ngOnDestroy = function () {
     };
-    SourceNewsComponent.prototype.loadSourceNews = function (sourceId) {
+    SourceNewsComponent.prototype.loadSourceNews = function (sourceId, source) {
         var _this = this;
-        this.newsProvider.fetchArticlesFromServer(sourceId).subscribe(function (articles) {
+        this.newsProvider.fetchArticlesFromServer(sourceId, source).subscribe(function (articles) {
             _this.articles = articles;
         });
     };

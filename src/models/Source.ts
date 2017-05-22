@@ -6,7 +6,7 @@ export class Source {
 		public id: string,
 		public language: string,
 		public name: string,
-		public sortsAvailable: any,
+		public sortBysAvailable: any,
 		public url: string,
 		public urlsToLogos: any
 	){}

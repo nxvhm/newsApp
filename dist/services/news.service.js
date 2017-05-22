@@ -64,10 +64,13 @@ var NewsService = (function () {
      * @param  {string} sortBy   = "latest"   [description]
      * @return {Observable<Article[]>} [description]
      */
-    NewsService.prototype.fetchArticlesFromServer = function (sourceId, sortBy) {
+    NewsService.prototype.fetchArticlesFromServer = function (sourceId, source, sortBy) {
         var _this = this;
         if (sourceId === void 0) { sourceId = "bbc-news"; }
         if (sortBy === void 0) { sortBy = "top"; }
+        if (undefined != source.sortBysAvailable && source.sortBysAvailable instanceof Array) {
+            sortBy = source.sortBysAvailable[0];
+        }
         var storageKey = sourceId + "-" + sortBy + "-articles", storageData = this.storage.getItem(storageKey);
         if (storageData != null && storageData != undefined && storageData != 'null') {
             var articlesData = JSON.parse(storageData);

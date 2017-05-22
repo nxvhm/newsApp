@@ -77,7 +77,12 @@ export class NewsService {
 	 * @param  {string} sortBy   = "latest"   [description]
 	 * @return {Observable<Article[]>} [description]
 	 */
-	fetchArticlesFromServer(sourceId = "bbc-news", sortBy = "top") : Observable<Article[]>{
+	fetchArticlesFromServer(sourceId = "bbc-news", source: Source, sortBy = "top") : Observable<Article[]>{
+
+		if(undefined != source.sortBysAvailable && source.sortBysAvailable instanceof Array) {
+			sortBy = source.sortBysAvailable[0];
+		}
+		
 		var storageKey = sourceId + "-" + sortBy + "-articles",
 			storageData = this.storage.getItem(storageKey);
 
