@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var news_service_1 = require("../services/news.service");
+var news_service_1 = require("../../services/news.service");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/mergeMap");
 require("rxjs/add/operator/filter");
@@ -52,7 +52,7 @@ __decorate([
 SourcesSidebarComponent = __decorate([
     core_1.Component({
         selector: 'sources-sidebar',
-        templateUrl: './src/shared/templates/sources-sidebar.component.html',
+        templateUrl: './src/components/sidebar/sources-sidebar.component.html',
     }),
     __metadata("design:paramtypes", [news_service_1.NewsService, router_1.Router, router_1.ActivatedRoute])
 ], SourcesSidebarComponent);

@@ -49,9 +49,11 @@ body {
 	text-decoration: none;
 	color: #fff;
 }
-#menu-container ul li a:hover {
+#menu-container ul li a:hover,
+#menu-container ul li.active a {
 	color: #18bc9c;
 }
+
 #main-content {
 	// width: calc(100% - 60px);
 	height: 100%;

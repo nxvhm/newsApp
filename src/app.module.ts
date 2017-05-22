@@ -8,7 +8,7 @@ import { NewsAppComponent } from './components/app.component';
 import { IndexNewsComponent } from './components/indexNews/indexNews.component';
 import { SourceNewsComponent } from './components/sourceNews/sourceNews.component';
 import { SourceListComponent } from './components/sourcesList/sourceList.component';
-import { SourcesSidebarComponent } from './components/sidebar.component';
+import { SourcesSidebarComponent } from './components/sidebar/sidebar.component';
 import { TopNavigationComponent } from './components/topbar/topbar.component';
 import {routes} from './app.routes';
 

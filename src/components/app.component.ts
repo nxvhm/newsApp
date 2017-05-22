@@ -9,5 +9,8 @@ import { Router } from '@angular/router';
 
 
 export class NewsAppComponent {
-	constructor(public router: Router) {}
+	constructor(public router: Router) {
+
+	}
+
 }
