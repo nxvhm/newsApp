@@ -5,14 +5,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var news_service_1 = require("../../services/news.service");
 var TopNavigationComponent = (function () {
-    function TopNavigationComponent() {
+    function TopNavigationComponent(newsProvider) {
+        this.newsProvider = newsProvider;
         this.isCollapsed = true;
     }
     TopNavigationComponent.prototype.toggleCollapse = function () {
         this.isCollapsed = !this.isCollapsed;
+    };
+    TopNavigationComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.newsProvider.getNewsSources().subscribe(function (sources) {
+                _this.sources = sources;
+            });
+        }, 700);
     };
     return TopNavigationComponent;
 }());
@@ -20,7 +33,8 @@ TopNavigationComponent = __decorate([
     core_1.Component({
         selector: 'top-navigation',
         templateUrl: './src/components/topbar/topbar.component.html'
-    })
+    }),
+    __metadata("design:paramtypes", [news_service_1.NewsService])
 ], TopNavigationComponent);
 exports.TopNavigationComponent = TopNavigationComponent;
 //# sourceMappingURL=topbar.component.js.map

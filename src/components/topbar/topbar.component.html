@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container-fluid">
   <div class="navbar-header">
-    <a href="../" class="navbar-brand">News App</a>
+    <a [routerLink]="['/']" class="navbar-brand">News App</a>
     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"
       [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()" [ngClass]="{'collapsed': isCollapsed}">
       <span class="icon-bar"></span>
@@ -12,17 +12,11 @@
   <div class="navbar-collapse collapse" id="navbar-main" [ngClass]="{'in': !isCollapsed}">
     <ul class="nav navbar-nav">
       <li >
-	<a [routerLink]="['/']">NEWS</a>
+	<a  [routerLink]="['/sources']">Sources</a>
       </li>
-      <li >
-	<a [routerLink]="['/source/1']">Speicifcs</a>
-      </li>
-      <li >
-	<a  [routerLink]="['/sources']">News Sources</a>
+      <li *ngFor="let source of sources" class="visible-xs">
+        <a [routerLink]="['/source', source.id]" title="{{source.name + ' News'}}">{{source.name}}</a>
       </li>                        
-      <li>
-        <a href="../help/">Help</a>
-      </li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
