@@ -10,6 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./components/app.component");
 var indexNews_component_1 = require("./components/indexNews/indexNews.component");
 var sourceNews_component_1 = require("./components/sourceNews/sourceNews.component");
@@ -28,6 +29,7 @@ NewsAppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes),
             http_1.HttpModule,
+            forms_1.FormsModule
         ],
         declarations: [
             topbar_component_1.TopNavigationComponent,
