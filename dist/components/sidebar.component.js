@@ -14,6 +14,7 @@ var news_service_1 = require("../services/news.service");
 var SourcesSidebarComponent = (function () {
     function SourcesSidebarComponent(provider) {
         this.provider = provider;
+        this.filterSource = "";
     }
     SourcesSidebarComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -22,8 +23,15 @@ var SourcesSidebarComponent = (function () {
             _this.sources = sources;
         });
     };
+    SourcesSidebarComponent.prototype.onFilterSourceChange = function (value) {
+        console.log(this.filterSource);
+    };
     return SourcesSidebarComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SourcesSidebarComponent.prototype, "filterSource", void 0);
 SourcesSidebarComponent = __decorate([
     core_1.Component({
         selector: 'sources-sidebar',

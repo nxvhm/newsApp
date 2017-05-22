@@ -14,9 +14,9 @@ body {
 .pl0 { padding-left: 0px!important;}
 .pr0 { padding-left: 0px!important;}
 .p5  { padding: 5px;}
-
+.mb10 { margin-bottom: 10px;}
 #sidebar {
-	width: 270px;
+	// width: 270px;
 	height: calc(100% - 60px);
 	float: left;
 	background-color: #23313f;
@@ -53,21 +53,29 @@ body {
 	color: #18bc9c;
 }
 #main-content {
-	width: calc(100% - 60px);
+	// width: calc(100% - 60px);
 	height: 100%;
 	float: right;
 	margin-top: 60px;
-	/* padding: 15px; */
 	box-sizing: border-box;
 }
 
 article.article-preview {
 	margin-bottom: 20px;
-	padding-left: 0px;
 }
 article.article-preview h1, 
 article.article-preview h2, 
 article.article-preview h3 {
 	margin-top: 0px;
+	margin-bottom: 0px;
 	padding-top: 0px;
+}
+article.article-preview .details {
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+
+article img {
+	width: 100%;
+	border-radius: 3px;
 }

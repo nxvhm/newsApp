@@ -1,7 +1,7 @@
-<div id="sidebar" class="hidden-xs">
+<div id="sidebar" class="hidden-xs col-sm-2">
 	
 	<div class="menu-search">
-    	<input name="search" placeholder="Search..." type="text">
+    	<input name="search" [(ngModel)]="filterSource" (ngModelChange)="onFilterSourceChange($event)" placeholder="Search..." type="text">
   	</div>
 
 	<div id="menu-container">

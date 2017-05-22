@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , Input, OnInit} from '@angular/core';
 import { NewsService } from '../services/news.service';
-import { OnInit } from '@angular/core';
 import { Source } from  '../models/Source';
 
 @Component({
@@ -12,7 +11,11 @@ export class SourcesSidebarComponent implements OnInit {
 
 	sources: Source[];
 
-	constructor(private provider: NewsService) {}
+	@Input() filterSource: string;
+
+	constructor(private provider: NewsService) {
+		this.filterSource = "";
+	}
 
 
 	ngOnInit(){
@@ -20,5 +23,9 @@ export class SourcesSidebarComponent implements OnInit {
 		this.provider.getNewsSources().subscribe(sources => {
 			this.sources = sources;
 		});
+	}
+
+	onFilterSourceChange(value) {
+		console.log(this.filterSource);
 	}
 }
