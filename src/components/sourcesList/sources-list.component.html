@@ -1,1 +1,24 @@
-this is sources list page
+<div class="row">
+<div class="col-xs-12 text-center mb10">
+<h3>News Sources</h3>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4"  *ngFor="let source of sources">
+<div class="panel panel-success  source">
+	<div class="panel-heading">
+	  <h3 class="panel-title"><span class="flag-icon flag-icon-{{source.country}} small"></span>&nbsp;{{source.name}}</h3>
+	</div>
+	<div class="panel-body">
+		<p>	{{source.description}} </p>
+	 
+	</div>
+	<div class="panel-footer">
+		<a [routerLink]="['/source', source.id]" class="pull-left"><i class="fa fa-newspaper-o"></i> Read news</a>
+		<a href="{{source.url}}" target="_blank" class="pull-right"> <i class="fa fa-external-link"></i> Visit Site</a>
+	</div>
+</div>	
+	
+</div>
+</div>	
