@@ -5,7 +5,7 @@ import {SourceListComponent} from './components/sourcesList/sourceList.component
 
 
 export const routes: Routes = [
-	{ path: "", component: IndexNewsComponent},
-	{ path: "source/:id", component: SourceNewsComponent},
-	{ path: "sources", component: SourceListComponent}
+	{ path: "", component: SourceListComponent},
+	{ path: "source/:id", component: SourceNewsComponent}
+	//{ path: "sources", component: SourceListComponent}
 ];
